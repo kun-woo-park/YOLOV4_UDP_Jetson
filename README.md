@@ -11,7 +11,7 @@
 정리되지 않은 실험내용은 [collision_avoidance](https://github.com/aisl-khu/collision_avoidance)에서 확인할 수 있다.
 ## Overview of this research
 <img src="./img/overview.PNG" width="80%">
-본 연구의 개요는 위 그림을 따른다. 연산의 주가 되는 컴퓨터는 NVIDIA 사에서 개발한 Jetson Xavier라는 임베디드 플랫폼(Xavier)이다. 본 과제에서는 영상 데이터 수집을 위해 Unity로 구현된 항공기 시뮬레이터가 사용되는데, 이 항공기 시뮬레이터는 인하대학교 ASCL에서 제공한다. Unity 시뮬레이터를 가동하는 컴퓨터는 충분히 시뮬레이션의 부하를 감당할 수 있는 컴퓨터를 사용한다. 항공기 시뮬레이터는 [Imitation_learning](https://github.com/kun-woo-park/Imitation_learning)과 동일한 동역학을 따르며, 회피기의 날개에서 정면을 향하는 영상을 송출한다(회피기의 날개에 카메라가 달려있다고 가정). 매 프레임마다 Unity 시뮬레이터의 영상정보와 레이더 정보가 각각 Capture board와 UDP통해 Xavier의 입력으로 제공된다. 입력으로 받은 영상정보를 YOLOV4를 이용해 object detection을 한다. 이때   새(bird) 혹은 항공기(aircraft)가 인식되면, 회피 프로그램(딥러닝 모델 혹은 강화학습 모델(AGENT))에게 UDP로 detection flag를 전달한다. 회피 프로그램은 detection flag가 들어오면, Unity 시뮬레이터로부터 입력 받은 레이더 정보를 통해 회피기동을 진행한다.
+본 연구의 개요는 위 그림을 따른다. 연산의 주가 되는 컴퓨터는 NVIDIA 사에서 개발한 Jetson Xavier라는 임베디드 플랫폼(Xavier)이다. 본 과제에서는 영상 데이터 수집을 위해 Unity로 구현된 항공기 시뮬레이터가 사용되는데, 이 항공기 시뮬레이터는 인하대학교 ASCL에서 제공한다. Unity 시뮬레이터를 가동하는 컴퓨터는 충분히 시뮬레이션의 부하를 감당할 수 있는 컴퓨터를 사용한다. 항공기 시뮬레이터는 [Imitation_learning](https://github.com/kun-woo-park/Imitation_learning) 과 동일한 동역학을 따르며, 회피기의 날개에서 정면을 향하는 영상을 송출한다(회피기의 날개에 카메라가 달려있다고 가정). 매 프레임마다 Unity 시뮬레이터의 영상정보와 레이더 정보가 각각 Capture board와 UDP통해 Xavier의 입력으로 제공된다. 입력으로 받은 영상정보를 YOLOV4를 이용해 object detection을 한다. 이때   새(bird) 혹은 항공기(aircraft)가 인식되면, 회피 프로그램(딥러닝 모델 혹은 강화학습 모델(AGENT))에게 UDP로 detection flag를 전달한다. 회피 프로그램은 detection flag가 들어오면, Unity 시뮬레이터로부터 입력 받은 레이더 정보를 통해 회피기동을 진행한다.
 
 먼저 YOLOV3 알고리즘(Deepstream, https://developer.nvidia.com/deepstream-getting-started) 을 
 사용한 object detection 알고리즘과 Supervised Learning을 이용하여 학습시킨 모델을 Jetson xavier에 동시에 얹어 결과를 확인해 보았다. 해당 결과는 아래 링크를 참고하라.
