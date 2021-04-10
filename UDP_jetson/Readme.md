@@ -28,7 +28,7 @@ sock.bind((host_ip, host_port))
 [UDP_methods.py](UDP_methods.py) 파일을 보면, 추가적으로 YOLOV4 Deepstream의 Detection Flag를 받도록 구현이 되어있는데, Local(127.0.0.1)의 4729 port로 Flag를 받게 된다. 이를 간략히 그림으로 나타내면 아래와 같다. 실행을 위한 파일은 [UDPjetson-connected.py](UDPjetson-connected.py)이다.
 
 코드 실행 시 parsing option으로 다음과 같은 입력들을 통해 ip와 port들을 지정할 수 있다.
-```bash
+```python
 --host_ip, type = str, default ="127.0.0.1"
 --client_ip', type = str, default ="127.0.0.1"
 --host_port', type = int, default =8888
