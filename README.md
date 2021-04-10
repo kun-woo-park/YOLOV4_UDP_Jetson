@@ -7,7 +7,7 @@
 
 
 # Purpose of this research
-본 연구의 목적은 영상기반 물체인식과 회피 프로그램의 융합 구현이다. 입력으로는 레이더 데이터 입력값과 카메라 입력값 두개가 주어지고, 카메라에 상대기가 detect되면, 회피기동을 시작하도록 고도 변화 명령을 출력으로 내보낸다. 본 연구의 간략한 overview는 아래와 같다. 본 Repo는 [Imitation_learning](https://github.com/kun-woo-park/Imitation_learning)에서 이어진다.
+본 연구의 목적은 영상기반 물체인식과 회피 프로그램의 융합 구현이다. 입력으로는 레이더 데이터 입력값과 카메라 입력값 두개가 주어지고, 카메라에 상대기가 detect되면, 회피기동을 시작하도록 고도 변화 명령을 출력으로 내보낸다. 본 연구의 간략한 overview는 아래와 같다. 본 Repo는 [Imitation_learning](https://github.com/kun-woo-park/Imitation_learning) 에서 이어진다.
 정리되지 않은 실험내용은 [collision_avoidance](https://github.com/aisl-khu/collision_avoidance)에서 확인할 수 있다.
 ## Overview of this research
 <img src="./img/overview.PNG" width="80%">
