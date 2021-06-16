@@ -32,7 +32,7 @@ trtexec --onnx=<onnx_file> --explicitBatch --saveEngine=<tensorRT_engine_file> -
 # trtexec --onnx=yolov4_1_3_608_608.onnx --explicitBatch --saveEngine=yolov4_1_3_608_608_fp16.engine --workspace=4096 --fp16
 ```
 
-## YOLOV4 Custom mplementation
+## YOLOV4 Custom Implementation
 nvdsinfer_custom_impl_Yolo/nvdsparsebbox_Yolo.cpp 에 아래의 항목을 추가한다.
 ```cpp
 extern "C" bool NvDsInferParseCustomYoloV4(
