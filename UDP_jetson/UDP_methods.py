@@ -57,7 +57,7 @@ class WaveNET(nn.Module):  # define custom model named wave net, which was coine
 
 
 # sending avoidance command to Unity simulator
-def setCMD(client_ip, client_port, mode, roll, alpha, thrust, DBPAStakeOver):
+def setCMD(client_ip, client_port, mode, roll, alpha, thrust, DBPAStakeOver, sock):
     ######## packet ICD (python to unity) #######
     header1 = 80
     header2 = 85
@@ -323,7 +323,7 @@ def UDP_main(host_ip, host_port, client_ip, client_port, yolo_port):
                     ac = K_alt * (hdot_cmd - OWNship_vertical_rate) + \
                          g / (np.cos(gamma)) - 7.0
                     ac = np.clip(ac, -30, 30)
-                    setCMD(client_ip, client_port, 0, 100, ac + 100, thrustCMD, True)
+                    setCMD(client_ip, client_port, 0, 100, ac + 100, thrustCMD, True, sock)
 
                 else:
                     thrustCMD = 150 + 100 * (51.44 - OWNship_velocity)
@@ -332,7 +332,7 @@ def UDP_main(host_ip, host_port, client_ip, client_port, yolo_port):
                     ac = K_alt * (hdot_cmd - OWNship_vertical_rate) + \
                          g / (np.cos(gamma)) - 7.0
                     ac = np.clip(ac, -30, 30)
-                    setCMD(client_ip, client_port, 0, 100, ac + 100, thrustCMD, True)
+                    setCMD(client_ip, client_port, 0, 100, ac + 100, thrustCMD, True, sock)
 
                 results.append([ATAR_intruder_bearing, ATAR_intruder_elevation, ATAR_intruder_relative_distance,
                                 ATAR_intruder_closing_velocity, ATAR_intruder_detection_flag, OWNship_longitude,
