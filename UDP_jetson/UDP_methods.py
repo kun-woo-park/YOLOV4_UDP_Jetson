@@ -62,6 +62,8 @@ def setCMD(client_ip, client_port, mode, roll, alpha, thrust, DBPAStakeOver):
     header1 = 80
     header2 = 85
     header3 = 67
+    cmdPacket = bytearray(7)
+    cameraCmdPacket = bytearray(10)
     cmdPacket[0] = header1
     cmdPacket[1] = header2
     cmdPacket[2] = mode
@@ -181,9 +183,6 @@ def UDP_main(host_ip, host_port, client_ip, client_port, yolo_port):
     ZomoutCMD = 0
     cameraLselect = 1
     cameraRselect = 0
-
-    cmdPacket = bytearray(7)
-    cameraCmdPacket = bytearray(10)
 
 
     #######################################################################################
