@@ -1,5 +1,5 @@
 import argparse
-import UDP_methods as UDP_main
+from UDP_methods import UDP_main
 
 # parsing user input option
 parser = argparse.ArgumentParser(description='Train Implementation')
