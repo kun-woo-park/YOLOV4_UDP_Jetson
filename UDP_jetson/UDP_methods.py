@@ -58,6 +58,10 @@ class WaveNET(nn.Module):  # define custom model named wave net, which was coine
 
 # sending avoidance command to Unity simulator
 def setCMD(client_ip, client_port, mode, roll, alpha, thrust, DBPAStakeOver):
+    ######## packet ICD (python to unity) #######
+    header1 = 80
+    header2 = 85
+    header3 = 67
     cmdPacket[0] = header1
     cmdPacket[1] = header2
     cmdPacket[2] = mode
@@ -163,12 +167,6 @@ def UDP_main(host_ip, host_port, client_ip, client_port, yolo_port):
     INTruder_vertical_rate = 0
 
     #############################################
-
-    ######## packet ICD (python to unity) #######
-
-    header1 = 80
-    header2 = 85
-    header3 = 67
 
     flightMode = 1  # mode 1 = auto , mode 0 = manual
 
