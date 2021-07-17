@@ -32,6 +32,7 @@ python3 demo_darknet2onnx.py yolov4.cfg yolov4.weights ./data/giraffe.jpg 1
 
 ## ONNX to TensorRT
 ```bash
+export PATH=/usr/src/tensorrt/bin:$PATH
 trtexec --onnx=<onnx_file> --explicitBatch --saveEngine=<tensorRT_engine_file> --workspace=<size_in_megabytes> --fp16
 # example
 # trtexec --onnx=yolov4_1_3_608_608.onnx --explicitBatch --saveEngine=yolov4_1_3_608_608_fp16.engine --workspace=4096 --fp16
