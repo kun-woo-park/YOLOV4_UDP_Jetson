@@ -1,5 +1,10 @@
 # Custom_deepstream
 
+## Install dependencies
+```bash
+sudo apt-get install libgstreamer1.0-dev libgstrtspserver-1.0-dev libjson-glib-dev protobuf-compiler libprotoc-dev
+```
+
 ## Apply YOLOV4 Deepstream
 현재 Repo에 https://drive.google.com/file/d/1lx3-k_R88zBGivqEKJwf28x4Hiw3sWQ9/view?usp=sharing 에서 YOLOV4 Engine을 다운받아 넣은 뒤 다음 명령어를 사용하여 실행시킨다. 
 (환경에 따라 경로가 다를 수 있으니 Rebuild 하여 사용한다.)
