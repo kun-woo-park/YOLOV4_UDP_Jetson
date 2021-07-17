@@ -175,12 +175,6 @@ class WaveNET(nn.Module):  # define custom model named wave net, which was coine
 
     def forward(self, x):
         return self.forward_impl(x)
-    
-# model load
-tr_model = torch.load("./Custom_model_fin.pth")
-tr_model.eval()
-mean = np.load('mean.npy')
-std = np.load('std.npy')
 
 
 # sending avoidance command to Unity simulator
@@ -197,6 +191,11 @@ def setCMD(client_ip, client_port, mode, roll, alpha, thrust, DBPAStakeOver):
 
 
 def UDP_main(host_ip, host_port, client_ip, client_port, yolo_port):
+    # model load
+    tr_model = torch.load("./Custom_model_fin.pth")
+    tr_model.eval()
+    mean = np.load('mean.npy')
+    std = np.load('std.npy')
     results = []                                                    # list for print
     detection_flag = 0
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
