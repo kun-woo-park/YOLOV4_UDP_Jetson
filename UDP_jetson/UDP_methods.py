@@ -4,11 +4,6 @@ import numpy as np
 import torch.nn as nn
 from torch import Tensor
 
-# model load
-tr_model = torch.load("./Custom_model_fin.pth")
-tr_model.eval()
-mean = np.load('mean.npy')
-std = np.load('std.npy')
 
 #######################################################################################
 ################# Unity packet data information (from ASCL, Inha Univ.) ###############
@@ -180,6 +175,12 @@ class WaveNET(nn.Module):  # define custom model named wave net, which was coine
 
     def forward(self, x):
         return self.forward_impl(x)
+    
+# model load
+tr_model = torch.load("./Custom_model_fin.pth")
+tr_model.eval()
+mean = np.load('mean.npy')
+std = np.load('std.npy')
 
 
 # sending avoidance command to Unity simulator
