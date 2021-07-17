@@ -26,7 +26,7 @@ https://github.com/AlexeyAB/darknet#pre-trained-models
 ```bash
 git clone https://github.com/Tianxiaomo/pytorch-YOLOv4.git
 cd pytorch-YOLOv4
-pip install onnxruntime onnx==1.7.0
+pip install onnxruntime onnx==1.7.0 numpy==1.19.4
 python3 demo_darknet2onnx.py yolov4.cfg yolov4.weights ./data/giraffe.jpg 1
 ```
 
